@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Misty Sun — 作业主页</title>
+  <title>Misty Sun — Personal Homepage</title>
 
   <!-- 版式：LaTeX.css（学术论文风） -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.min.css" />
@@ -34,249 +34,160 @@
     nav a { margin-right: 1rem; }
     .updated { font-size: .9rem; color: #667085; }
     
-    /* 焦距滑块样式 */
-    .focal-length-demo {
+    /* 个人主页样式 */
+    .intro-section {
       margin: 2rem 0;
+    }
+    
+    .course-grid {
+      display: block;
+      margin: 2rem 0;
+    }
+    
+    .course-card {
       padding: 1.5rem;
       border: 1px solid #e1e5e9;
       border-radius: 8px;
-      background: #f8f9fa;
-    }
-    
-    .slider-container {
-      margin: 1rem 0;
-    }
-    
-    .focal-slider {
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+      margin-bottom: 2rem;
       width: 100%;
-      height: 8px;
+    }
+    
+    .course-card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .course-title {
+      color: #4285f4;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .course-description {
+      color: #667085;
+      margin-bottom: 1rem;
+    }
+    
+    .project-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .project-list li {
+      margin: 0.5rem 0;
+    }
+    
+    .project-list a {
+      text-decoration: none;
+      color: #1a73e8;
+      padding: 0.2rem 0.5rem;
       border-radius: 4px;
-      background: #ddd;
-      outline: none;
-      -webkit-appearance: none;
+      transition: background-color 0.3s ease;
     }
     
-    .focal-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #4285f4;
-      cursor: pointer;
+    .project-list a:hover {
+      background-color: #e8f0fe;
     }
     
-    .focal-slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #4285f4;
-      cursor: pointer;
-      border: none;
-    }
-    
-    .focal-info {
+    .contact-info {
       display: flex;
-      justify-content: space-between;
+      gap: 2rem;
       align-items: center;
       margin: 1rem 0;
     }
     
-    .focal-display {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #4285f4;
+    @media (max-width: 768px) {
+      .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
-    
-    .focal-marks {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: #667085;
-      margin-top: 0.5rem;
-    }
-    
-    .demo-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: opacity 0.3s ease;
-    }
-    
-    /* 可切换深色：给 <body> 加 class="latex-dark" 即可 */
   </style>
 </head>
 
 <body>
 <article>
   <header>
-    <h1>Project 0: Becoming Friends with Your Camera</h1>
-    <p class="author">
-      Jingsong Sun <br /> Email: jingsongsun@berkeley.edu
-      <!-- <span class="pill">LaTeX.css</span> <span class="pill">KaTeX</span> -->
-    </p>
-    <!-- <nav>
-      <a href="#intro">说明</a>
-      <a href="#hw">作业列表</a>
-      <a href="#proj">项目</a>
-    </nav> -->
+    <h1>Misty Sun (孙靖淞)</h1>
+    <div class="contact-info">
+      <span>Email: jingsongsun@berkeley.edu & jingsongsun@stu.xjtu.edu.cn</span>
+      <span>Xi'an Jiaotong University & UC Berkeley (visiting)</span>
+      <span>Computer Science </span>
+    </div>
   </header>
 
-  <section id="intro">
-    <h2>Introduction</h2>
+  <section class="intro-section">
+    <h2>About Me</h2>
     <p>
-      Understanding basic camera operations and settings is highly relevant (and really cool) for research in computer vision and image processing. 
-      This project will help us become familiar with our camera and its settings.
+      Welcome to my personal homepage! I'm Misty Sun (孙靖淞), a Computer Science student at Xi'an Jiaotong University, currently visiting UC Berkeley. 
+      I'm passionate about machine learning theory and large language models (LLMs), exploring the theoretical foundations behind modern AI systems.
+    </p>
+    <p>
+      This website showcases my coursework, projects, and explorations in various areas of computer science. 
+      Feel free to explore my projects and get in touch if you'd like to collaborate or discuss any of my work.
     </p>
   </section>
 
-  <section id="Part1: What is focal length？">
-    <h2>Part1: What is focal length？</h2>
-    <figure>
-      <img src="images/focal-length.png" alt="Focal length illustration" style="max-width:100%;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1);margin-bottom:1rem;">
-      <figcaption> diagrammatic representation of focal length </figcaption>
-    </figure>
-    <p>
-      Focal length is the distance between the lens and the image sensor when the subject is in focus. 
-      It is typically measured in millimeters (mm) and determines the field of view and magnification of the image.
-    </p>
-    <p>
-      Generally, a longer focal length results in a narrower field of view and greater magnification, while a shorter focal length provides a wider field of view and less magnification.
-    </p>
-    <figure>
-      <img src="images/focal-length-view.png" alt="Focal length view" style="max-width:100%;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1);margin-bottom:1rem;">
-      <figcaption> diagrammatic representation of relationship between focal length and field of view </figcaption>
-    </figure>
-
-  <section id="Part2: Is Changing Focal Length the Same as Simple Zooming?">
-    If we just read the concept of "focal length", we may think that changing focal length is the same as simple zooming in and out. However, they are not the same.
-    In fact, changing the focal length alters the perspective and composition of the image, while zooming simply crops the image without changing the perspective.
-    Here are two interactive demos below to show the special of changing focal length.
-    <div class="focal-length-demo">
-      <h3>focal-length demonstration: portrait</h3>
-      <p>Drag the slider below to experience how the perspective changes with different focal lengths:</p>
-      
-      <div class="focal-info">
-        <span>focal length:</span>
-        <span class="focal-display" id="focalDisplay">14mm</span>
-        <span id="focalDescription">Ultra Wide Angle</span>
-      </div>
-      
-      <div class="slider-container">
-        <input type="range" min="0" max="6" value="0" class="focal-slider" id="focalSlider">
-        <div class="focal-marks">
-          <span>14mm</span>
-          <span>24mm</span>
-          <span>28mm</span>
-          <span>35mm</span>
-          <span>48mm</span>
-          <span>75mm</span>
-          <span>121mm</span>
-        </div>
-      </div>
-      
-      <figure>
-        <img id="focalImage" src="images/14mm-con.jpeg" alt="Focal length demonstration" class="demo-image">
-        <figcaption id="imageCaption">14mm - Ultra Wide Angle: Captures expansive scenes with exaggerated perspective</figcaption>
-      </figure>
-    </div>
-
-    <div class="focal-length-demo">
-      <h3>Focal-length demonstration: landscape</h3>
-      <p>Experience how different focal lengths affect landscape and scenery photography:</p>
-      
-      <div class="focal-info">
-        <span>focal length:</span>
-        <span class="focal-display" id="focalDisplayLandscape">14mm</span>
-        <span id="focalDescriptionLandscape">Ultra Wide Angle</span>
-      </div>
-      
-      <div class="slider-container">
-        <input type="range" min="0" max="3" value="0" class="focal-slider" id="focalSliderLandscape">
-        <div class="focal-marks">
-          <span>14mm</span>
-          <span>24mm</span>
-          <span>48mm</span>
-          <span>120mm</span>
-        </div>
-      </div>
+  <section id="courses">
+    <h2>Courses & Projects</h2>
     
-      <figure>
-        <img id="focalImageLandscape" src="images/14mm-landscape.jpeg" alt="Landscape focal length demonstration" class="demo-image">
-        <figcaption id="imageCaptionLandscape">14mm - Ultra Wide Angle: Captures vast landscapes with dramatic perspective</figcaption>
-      </figure>
+    <div class="course-grid">
+      <div class="course-card">
+        <div class="course-title">CS180 - Intro to Computer Vision & Computational Photography</div>
+        <div class="course-description">
+          Exploring fundamental concepts in computer vision, image processing, and computational photography.
+        </div>
+        <ul class="project-list">
+          <li><a href="cs180/project0/">Project 0: Becoming Friends with Your Camera</a></li>
+          <li><a href="cs180/project1/">Project 1: Images of the Russian Empire (Coming Soon)</a></li>
+          <li><a href="cs180/project2/">Project 2: Fun with Filters and Frequencies (Coming Soon)</a></li>
+        </ul>
+      </div>
+      
+      <!-- 可以添加更多课程 -->
+      <div class="course-card">
+        <div class="course-title">Future Courses</div>
+        <div class="course-description">
+          More exciting projects and coursework coming soon!
+        </div>
+        <ul class="project-list">
+          <li>Stay tuned for updates...</li>
+        </ul>
+      </div>
     </div>
-    <p>
-      A shorter focal length (e.g., 14mm) provides a wider field of view, capturing more of the scene and is often used for landscape photography. Conversely, a longer focal length (e.g., 121mm) offers a narrower field of view, magnifying distant subjects and is commonly used for portrait or telephoto photography.
-    </p>
   </section>
 
-  <section id="proj">
-    <h2>项目</h2>
+  <section id="research">
+    <h2>Research Interests</h2>
+    <p>
+      My research interests span across several areas of computer science and mathematics:
+    </p>
     <ul>
-      <li><a href="rl-notes.html">强化学习笔记与复现实验</a></li>
-      <li><a href="ml-theory.html">学习理论与长度泛化小记</a></li>
+      <li><strong>Computer Vision:</strong> Image processing, object recognition, and scene understanding</li>
+      <li><strong>Computational Photography:</strong> Novel imaging techniques and photo enhancement</li>
+      <li><strong>Machine Learning:</strong> Deep learning applications in visual recognition</li>
+      <li><strong>Applied Mathematics:</strong> Optimization and statistical methods in computer science</li>
     </ul>
   </section>
 
+  <section id="contact">
+    <h2>Contact & Links</h2>
+    <p>
+      I'm always open to discussing research opportunities, collaboration, or just chatting about computer science!
+    </p>
+    <ul>
+      <li><strong>Email:</strong> jingsongsun@berkeley.edu & jingsongsun@stu.xjtu.edu.cn</li>
+      <li><strong>Institution:</strong> University of California, Berkeley & Xi'an Jiaotong University</li>
+      <li><strong>Location:</strong> Berkeley, CA</li>
+    </ul>
+  </section>
   <footer>
-    <p class="updated">© 2025 Misty Sun · Last updated: 2025-08-30</p>
+    <p class="updated">© 2025 Misty Sun · Last updated: 2025-09-01</p>
   </footer>
 </article>
-
-<script>
-    // 焦距滑块交互 - Portrait
-    const focalSlider = document.getElementById('focalSlider');
-    const focalDisplay = document.getElementById('focalDisplay');
-    const focalDescription = document.getElementById('focalDescription');
-    const focalImage = document.getElementById('focalImage');
-    const imageCaption = document.getElementById('imageCaption');
-    
-    const focalLengths = [
-      { mm: '14mm', desc: 'Ultra Wide Angle', img: 'images/14mm-con.jpeg', caption: '14mm - Ultra Wide Angle: Captures expansive scenes with exaggerated perspective' },
-      { mm: '24mm', desc: 'Wide Angle', img: 'images/24mm-con.jpeg', caption: '24mm - Wide Angle: Great for landscapes and architecture' },
-      { mm: '28mm', desc: 'Moderate Wide Angle', img: 'images/28mm-con.jpeg', caption: '28mm - Moderate Wide Angle: A balance between wide and standard perspectives' },
-      { mm: '35mm', desc: 'Standard', img: 'images/35mm-con.jpeg', caption: '35mm - Standard: Versatile focal length for various subjects' },
-      { mm: '48mm', desc: 'Short Telephoto', img: 'images/48mm.jpeg', caption: '48mm - Short Telephoto: Ideal for portraits with pleasant compression' },
-      { mm: '75mm', desc: 'Medium Telephoto', img: 'images/75mm-con.jpeg', caption: '75mm - Medium Telephoto: Popular for portrait photography' },
-      { mm: '121mm', desc: 'Long Telephoto', img: 'images/121mm-con.jpeg', caption: '121mm - Long Telephoto: Strong compression, distant subject magnification' }
-    ];
-    
-    focalSlider.addEventListener('input', function() {
-      const index = parseInt(this.value);
-      const focal = focalLengths[index];
-      
-      focalDisplay.textContent = focal.mm;
-      focalDescription.textContent = focal.desc;
-      focalImage.src = focal.img;
-      imageCaption.textContent = focal.caption;
-    });
-  </script>
-  <script>
-    // 焦距滑块交互 - Landscape
-    const focalSliderLandscape = document.getElementById('focalSliderLandscape');
-    const focalDisplayLandscape = document.getElementById('focalDisplayLandscape');
-    const focalDescriptionLandscape = document.getElementById('focalDescriptionLandscape');
-    const focalImageLandscape = document.getElementById('focalImageLandscape');
-    const imageCaptionLandscape = document.getElementById('imageCaptionLandscape');
-    
-    const focalLengthsLandscape = [
-      { mm: '14mm', desc: 'Ultra Wide Angle', img: 'images/14mm-landscape.jpeg', caption: '14mm - Ultra Wide Angle: Captures vast landscapes with dramatic perspective' },
-      { mm: '24mm', desc: 'Wide Angle', img: 'images/24mm-landscape.jpeg', caption: '24mm - Wide Angle: Perfect for sweeping vistas and architectural scenes' },
-      { mm: '48mm', desc: 'Short Telephoto', img: 'images/48mm-landscape.jpeg', caption: '48mm - Short Telephoto: Focuses on specific landscape elements' },
-      { mm: '120mm', desc: 'Long Telephoto', img: 'images/120mm-landscape.jpeg', caption: '120mm - Long Telephoto: Compresses distant mountains and scenery' }
-    ];
-    
-    focalSliderLandscape.addEventListener('input', function() {
-      const index = parseInt(this.value);
-      const focal = focalLengthsLandscape[index];
-      
-      focalDisplayLandscape.textContent = focal.mm;
-      focalDescriptionLandscape.textContent = focal.desc;
-      focalImageLandscape.src = focal.img;
-      imageCaptionLandscape.textContent = focal.caption;
-    });
-  </script>
 </body>
 </html>
+
