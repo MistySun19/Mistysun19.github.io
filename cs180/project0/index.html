@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Misty Sun — 作业主页</title>
+
+  <!-- 版式：LaTeX.css（学术论文风） -->
+  <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
+  <link rel="stylesheet" href="custom.css">
+  <!-- 数学：KaTeX（行内 \( ... \)，行间 \[ ... \]） -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+
+  <!-- 初始化 KaTeX（等页面加载完成后再渲染） -->
+  <script>
+    window.addEventListener("load", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "\\(", right: "\\)", display: false }, // 行内：\( ... \)
+          { left: "\\[", right: "\\]", display: true }   // 行间：\[ ... \]
+        ],
+        throwOnError: false
+      });
+    });
+  </script>
+
+  <!-- 可选的细节微调（中文衬线字体 & 链接色） -->
+  <style>
+    body { font-family: "Noto Serif SC","Noto Serif","Source Han Serif SC","Songti SC",serif; }
+    .muted { color: #667085; }
+    .pill { display:inline-block; padding:.1rem .45rem; border-radius:999px; background:#eef2ff; font-size:.8rem; }
+    nav a { margin-right: 1rem; }
+    .updated { font-size: .9rem; color: #667085; }
+    
+    /* 焦距滑块样式 */
+    .focal-length-demo {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border: 1px solid #e1e5e9;
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+    
+    /* 并列布局容器 */
+    .demo-container {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .demo-container .focal-length-demo {
+      flex: 1;
+      margin: 0;
+    }
+    
+    /* 响应式：在小屏幕上垂直堆叠 */
+    @media (max-width: 768px) {
+      .demo-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    
+    .slider-container {
+      margin: 1rem 0;
+    }
+    
+    .focal-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #ddd;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    
+    .focal-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4285f4;
+      cursor: pointer;
+    }
+    
+    .focal-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #4285f4;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .focal-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0;
+    }
+    
+    .focal-display {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #4285f4;
+    }
+    
+    .focal-marks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #667085;
+      margin-top: 0.5rem;
+    }
+    
+    .demo-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: opacity 0.3s ease;
+    }
+    
+    /* 可切换深色：给 <body> 加 class="latex-dark" 即可 */
+  </style>
+</head>
+
+<body>
+<article>
+  <header>
+    <h1>Project 0: Becoming Friends with Your Camera</h1>
+    <p class="author">
+      Jingsong Sun <br /> Email: jingsongsun@berkeley.edu
+      <!-- <span class="pill">LaTeX.css</span> <span class="pill">KaTeX</span> -->
+    </p>
+    <!-- <nav>
+      <a href="#intro">说明</a>
+      <a href="#hw">作业列表</a>
+      <a href="#proj">项目</a>
+    </nav> -->
+  </header>
+  <nav>
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#intro">Introduction</a></li>
+    <li><a href="#Part1: What is focal length？">Part 1: What is focal length?</a></li>
+    <li><a href="#Part2: Is Changing Focal Length the Same as Simple Zooming?">Part 2: Is Changing Focal Length the Same as Simple Zooming?</a></li>
+    <li><a href="#Part3: The confusing relationship between distortion and focal length">Part 3: The confusing relationship between distortion and focal length</a></li>
+    <li><a href="#Part4: The implication of perspective distortion -- Vertigo shot">Part 4: The implication of perspective distortion -- Vertigo shot</a></li>
+    <li><a href="#Conclusion">Conclusion</a></li>
+    <li><a href="#References">References</a></li>
+  </ol>
+</nav>
+  <section id="intro">
+    <h2>Introduction</h2>
+    <p>
+      Understanding basic camera operations and settings is highly relevant (and really cool) for research in computer vision and image processing. 
+      This project will help us become familiar with our camera and its settings.
+    </p>
+  </section>
+
+  <section id="Part1: What is focal length？">
+    <h2>Part1: What is focal length？</h2>
+    <figure style="text-align: center;">
+        <img src="images/focal-length.png" 
+            alt="Focal length illustration" 
+            style="max-width:60%;
+                    border-radius:8px;
+                    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+                    margin:0 auto 1rem auto;   /* 水平居中 */
+                    display:block;">          <!-- 确保是块级 -->
+        <figcaption style="text-align:center;">Diagrammatic representation of focal length</figcaption>
+    </figure>
+    <p>
+      Focal length is the distance between the lens and the image sensor when the subject is in focus. 
+      It is typically measured in millimeters (mm) and determines the field of view and magnification of the image.
+    </p>
+    <p>
+      Generally, a longer focal length results in a narrower field of view and greater magnification, while a shorter focal length provides a wider field of view and less magnification.
+    </p>
+    <figure>
+      <img src="images/focal-length-view.png" alt="Focal length view" style="max-width:100%;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.1);margin-bottom:1rem;">
+      <figcaption> diagrammatic representation of relationship between focal length and field of view </figcaption>
+    </figure>
+  </section>
+  <section id="Part2: Is Changing Focal Length the Same as Simple Zooming?">
+    <h2>Part2: Is Changing Focal Length the Same as Simple Zooming?</h2>
+    <p>
+        If we just read the concept of "focal length", we may think that changing focal length is the same as simple zooming in and out. However, they are not the same.
+    In fact, changing the focal length alters the perspective and composition of the image, while zooming simply crops the image without changing the perspective.
+    Here are two interactive demos below to show the special of changing focal length.
+    </p>
+    <div class="demo-container">
+      <div class="focal-length-demo">
+        <h3>Focal-length demonstration: portrait</h3>
+        <div class="focal-info">
+          <span>focal length:</span>
+          <span class="focal-display" id="focalDisplay">14mm</span>
+          <span id="focalDescription">Ultra Wide Angle</span>
+        </div>
+        
+        <div class="slider-container">
+          <input type="range" min="0" max="6" value="4" class="focal-slider" id="focalSlider">
+          <div class="focal-marks">
+            <span>14mm</span>
+            <span>24mm</span>
+            <span>28mm</span>
+            <span>35mm</span>
+            <span>48mm</span>
+            <span>75mm</span>
+            <span>121mm</span>
+          </div>
+        </div>
+        
+        <figure>
+          <img id="focalImage" src="images/48mm.jpeg" alt="Focal length demonstration" class="demo-image">
+          <figcaption id="imageCaption">48mm - Short Telephoto: Ideal for portraits with pleasant compression</figcaption>
+        </figure>
+      </div>
+
+      <div class="focal-length-demo">
+        <h3>Focal-length demonstration: landscape</h3>
+
+        <div class="focal-info">
+          <span>focal length:</span>
+          <span class="focal-display" id="focalDisplayLandscape">14mm</span>
+          <span id="focalDescriptionLandscape">Ultra Wide Angle</span>
+        </div>
+        
+        <div class="slider-container">
+          <input type="range" min="0" max="3" value="0" class="focal-slider" id="focalSliderLandscape">
+          <div class="focal-marks">
+            <span>14mm</span>
+            <span>24mm</span>
+            <span>48mm</span>
+            <span>120mm</span>
+          </div>
+        </div>
+      
+        <figure>
+          <img id="focalImageLandscape" src="images/14mm-landscape.jpeg" alt="Landscape focal length demonstration" class="demo-image">
+          <figcaption id="imageCaptionLandscape">14mm - Ultra Wide Angle: Captures vast landscapes with dramatic perspective</figcaption>
+        </figure>
+      </div>
+    </div>
+    <p>
+        It’s obvious that varying the focal length does more than just zoom in or out.
+        <strong> So, what’s the key difference, and what explains it?</strong>
+    </p>
+    <p>
+      In portrait photography, it is evident that when the subject’s size in the frame is held constant, short focal lengths introduce pronounced distortions: the forehead and chin appear unnaturally compressed. At approximately 48 mm, the subject’s proportions appear natural and balanced. In contrast, at very long focal lengths, the face becomes noticeably flattened, with the overall facial structure appearing elongated.
+    </p>
+    <p>
+      In landscape photography, the choice of focal length also significantly impacts the composition and depth of the image. 
+      Wide-angle lenses (e.g., 14mm) capture expansive scenes, allowing photographers to include more of the foreground and sky. 
+      On the other hand, telephoto lenses (e.g., 120mm) compress the scene, bringing distant elements closer together and creating a sense of depth.
+    </p>
+  </section>
+  <section id="Part3: The confusing relationship between distortion and focal length">
+    <h2>Part3: The confusing relationship between distortion and focal length</h2>
+    <h3>Part3.1: Understanding Perspective Distortion</h3>
+    <!--<p>
+    首先，我们得先介绍透视（perspective）的概念。
+    透视是指在三维空间中，物体的形状和位置如何影响其在二维平面上的表现。简单来说，透视就是我们如何感知深度和空间关系的方式。
+    重点在于透视和焦距无关，透视是由相机的位置和拍摄角度决定的，而焦距则影响视野的宽窄和物体的放大程度。
+    之前我们所观察到的焦距变化对图像的影响，其实是因为当我们要固定拍摄物体的大小时，必须调整相机与物体之间的距离。
+    当我们改变距离之后，透视效果也会随之变化。
+    短焦距镜头为了保持拍摄对象大小的一致性，往往需要靠近拍摄对象，从而导致人物的面部特征（如鼻子和下巴）在画面中显得更加突出和夸张。景物的纵深也会变得更加明显。
+    相反，长焦距镜头则可以在较远的距离拍摄对象，同时保持其大小不变。这种方式可以减少面部特征的夸张效果，使得人物的面部轮廓更加平滑，景物的纵深感也会减弱。
+    </p> -->
+
+    <p>
+    To clarify the relationship, we need to introduce the concept of perspective.
+    </p>
+    <div class="definition">
+        <strong>Perspective</strong>: Perspective refers to how the shape and position of objects in three-dimensional space affect their representation on a two-dimensional plane. Simply put, perspective is the way we perceive depth and spatial relationships.
+    </div>
+    <p>  
+    The principle of perspective can be understood from the lens imaging equation  
+    \[ \tfrac{1}{s_i} + \tfrac{1}{s_o} = \tfrac{1}{f} \],  
+    where \(s_i\) is the image distance, \(s_o\) is the object distance, and \(f\) is the focal length. The lateral magnification is given by  
+    \(M = \tfrac{s_i}{s_o} = \tfrac{f}{s_o - f}\).  
+    For objects of finite depth, the axial magnification can be expressed as  
+    \(M_{ax} = \tfrac{M^2}{f}\).  
+    This shows that when the magnification \(M\) is held constant, using a longer focal length requires increasing the camera-to-subject distance, which decreases axial magnification and makes depth appear shallower. Conversely, with a shorter focal length, the camera must be positioned closer, increasing axial magnification and exaggerating depth.  
+    </p>  
+
+    <p>
+    The effects we previously observed when changing focal length actually arise because, in order to keep the subject the same size in the frame, we must adjust the distance between the camera and the subject. Once the distance changes, the perspective effect changes accordingly.
+
+    With a short focal-length lens, in order to maintain the same subject size, the camera usually has to <strong>move closer </strong>to the subject. As a result, facial features such as the nose and chin appear more prominent and exaggerated, and the sense of depth in the scene becomes stronger.
+
+    In contrast, a long focal-length lens allows the subject to be photographed from a greater distance while keeping its size unchanged. This reduces the exaggeration of facial features, making the contours of the face appear smoother and diminishing the sense of depth in the scene.
+    </p>
+    <p>
+        Here is another example of the relationship between perspective and the position of the camera.
+        <!-- 这里放两张图片！！-->
+        <figure style="display: flex; gap: 1rem; align-items: center; margin: 2rem 0;">
+            <div style="flex: 1; text-align: center;">
+                <img src="images/close-distance.jpeg" alt="Close distance shot" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #667085;">Close Distance: Natural perspective</figcaption>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <img src="images/far-distance.jpg" alt="Far distance shot" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: #667085;">Far Distance: Strong perspective compression</figcaption>
+            </div>
+        </figure>
+        As we can see, the road in the right image appears more compressed, demonstrating the effect of perspective compression.
+    </p>
+    <h3>Part3.2: Above perspective distortion</h3>
+    <p> Except perspective distortion, there are other factors that can contribute to the overall distortion in an image, such as lens distortion.
+    <p>Lens distortion refers to the optical aberrations introduced by a lens that cause straight lines or geometric shapes in the real world to appear curved or deformed in an image. Unlike perspective distortion, which arises from the relative position of the camera and subject, lens distortion is inherent to the optical design and construction of the lens. The most common types are barrel distortion, where straight lines bow outward; pincushion distortion, where they curve inward; and moustache (or wavy) distortion, which combines both effects. While these distortions are often more pronounced in wide-angle lenses, modern digital imaging pipelines frequently correct them automatically through software calibration and lens profiles.</p>
+    <figure style="text-align: center;">
+        <img src="images/lens-distortion.png" 
+             alt="Lens distortion types illustration" 
+             style="max-width:80%;
+                    border-radius:8px;
+                    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+                    margin:0 auto 1rem auto;
+                    display:block;">
+        <figcaption style="text-align:center;">Types of lens distortion: barrel, pincushion, and moustache distortion</figcaption>
+    </figure>
+    <!--  perspective -->
+  </section>
+  <section id="Part4: The implication of perspective distortion -- Vertigo shot">
+    <h2>Part4: The implication of perspective distortion -- Vertigo shot </h2>
+    <p>
+        The Vertigo shot, also known as the Dolly Zoom, is a cinematic technique that creates a surreal visual effect by simultaneously zooming in with the camera lens while physically moving the camera backward (or vice versa). This technique was famously used in Alfred Hitchcock's film "Vertigo" to convey a sense of disorientation and psychological tension.
+    </p>
+    <p>
+        The key to achieving the Vertigo shot lies in manipulating perspective distortion. As the camera moves away from the subject, the background appears to stretch and expand, while the subject remains relatively constant in size due to the zoom. This creates a striking visual effect where the background seems to change dramatically while the subject stays in focus.
+    </p>
+
+
+    <figure style="text-align: center;">
+        <img src="images/dolly-zoom1.gif"
+            alt="Vertigo shot demonstration showing dolly zoom effect"
+            style="max-width:100%;
+                    border-radius:8px;
+                    box-shadow:0 4px 8px rgba(0,0,0,0.1);
+                    margin:0 auto 1rem auto;   /* 关键：左右自动外边距 */
+                    display:block;">          <!-- 确保是块级 -->
+        <figcaption style="text-align:center;">Dolly Zoom</figcaption>
+    </figure>
+  </section>
+  <section id="Conclusion">
+    <h2>Conclusion</h2>
+    <p>
+        In conclusion, understanding perspective distortion and its implications in cinematography is crucial for creating visually compelling narratives. Techniques like the Vertigo shot demonstrate how manipulating camera angles, distances, and focal lengths can profoundly impact the viewer's perception and emotional experience.
+    </p>
+  </section>
+  <section id="References">
+    <h2>References</h2>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Perspective_distortion">Perspective Distortion - Wikipedia</a></li>
+      <li><a href="https://www.canon.ge/pro/infobank/understanding-focal-length/">Understanding Focal Length - Canon</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="updated">© 2025 Misty Sun · Last updated: 2025-09-01</p>
+  </footer>
+</article>
+
+<script>
+    // 焦距滑块交互 - Portrait
+    const focalSlider = document.getElementById('focalSlider');
+    const focalDisplay = document.getElementById('focalDisplay');
+    const focalDescription = document.getElementById('focalDescription');
+    const focalImage = document.getElementById('focalImage');
+    const imageCaption = document.getElementById('imageCaption');
+    
+    const focalLengths = [
+      { mm: '14mm', desc: 'Ultra Wide Angle', img: 'images/14mm-con.jpeg', caption: '14mm - Ultra Wide Angle: Captures expansive scenes with exaggerated perspective' },
+      { mm: '24mm', desc: 'Wide Angle', img: 'images/24mm-con.jpeg', caption: '24mm - Wide Angle: Great for landscapes and architecture' },
+      { mm: '28mm', desc: 'Moderate Wide Angle', img: 'images/28mm-con.jpeg', caption: '28mm - Moderate Wide Angle: A balance between wide and standard perspectives' },
+      { mm: '35mm', desc: 'Standard', img: 'images/35mm-con.jpeg', caption: '35mm - Standard: Versatile focal length for various subjects' },
+      { mm: '48mm', desc: 'Short Telephoto', img: 'images/48mm.jpeg', caption: '48mm - Short Telephoto: Ideal for portraits with pleasant compression' },
+      { mm: '75mm', desc: 'Medium Telephoto', img: 'images/75mm.jpeg', caption: '75mm - Medium Telephoto: Popular for portrait photography' },
+      { mm: '121mm', desc: 'Long Telephoto', img: 'images/121mm-con.jpeg', caption: '121mm - Long Telephoto: Strong compression, distant subject magnification' }
+    ];
+
+    focalSlider.addEventListener('input', function() {
+      const index = parseInt(this.value);
+      const focal = focalLengths[index];
+      
+      focalDisplay.textContent = focal.mm;
+      focalDescription.textContent = focal.desc;
+      focalImage.src = focal.img;
+      imageCaption.textContent = focal.caption;
+    });
+  </script>
+  <script>
+    // 焦距滑块交互 - Landscape
+    const focalSliderLandscape = document.getElementById('focalSliderLandscape');
+    const focalDisplayLandscape = document.getElementById('focalDisplayLandscape');
+    const focalDescriptionLandscape = document.getElementById('focalDescriptionLandscape');
+    const focalImageLandscape = document.getElementById('focalImageLandscape');
+    const imageCaptionLandscape = document.getElementById('imageCaptionLandscape');
+    
+    const focalLengthsLandscape = [
+      { mm: '14mm', desc: 'Ultra Wide Angle', img: 'images/14mm-landscape.jpeg', caption: '14mm - Ultra Wide Angle: Captures vast landscapes with dramatic perspective' },
+      { mm: '24mm', desc: 'Wide Angle', img: 'images/24mm-landscape.jpeg', caption: '24mm - Wide Angle: Perfect for sweeping vistas and architectural scenes' },
+      { mm: '48mm', desc: 'Short Telephoto', img: 'images/48mm-landscape.jpeg', caption: '48mm - Short Telephoto: Focuses on specific landscape elements' },
+      { mm: '120mm', desc: 'Long Telephoto', img: 'images/120mm-landscape.jpeg', caption: '120mm - Long Telephoto: Compresses distant mountains and scenery' }
+    ];
+    
+    focalSliderLandscape.addEventListener('input', function() {
+      const index = parseInt(this.value);
+      const focal = focalLengthsLandscape[index];
+      
+      focalDisplayLandscape.textContent = focal.mm;
+      focalDescriptionLandscape.textContent = focal.desc;
+      focalImageLandscape.src = focal.img;
+      imageCaptionLandscape.textContent = focal.caption;
+    });
+  </script>
+</body>
+</html>
