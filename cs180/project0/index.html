@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Misty Sun — 作业主页</title>
+  <title>CS180 Project 0 - Becoming Friends with Your Camera</title>
 
   <!-- 版式：LaTeX.css（学术论文风） -->
   <link rel="stylesheet" href="https://latex.vercel.app/style.css" />
@@ -28,7 +28,21 @@
 
   <!-- 可选的细节微调（中文衬线字体 & 链接色） -->
   <style>
-    body { font-family: "Noto Serif SC","Noto Serif","Source Han Serif SC","Songti SC",serif; }
+    body { 
+      font-family: "Noto Serif SC","Noto Serif","Source Han Serif SC","Songti SC",serif;
+      counter-reset: figure-counter;
+    }
+    
+    /* Figure numbering */
+    figure {
+      counter-increment: figure-counter;
+    }
+    
+    figure figcaption::before {
+      content: "Figure " counter(figure-counter) ": ";
+      font-weight: bold;
+    }
+    
     .muted { color: #667085; }
     .pill { display:inline-block; padding:.1rem .45rem; border-radius:999px; background:#eef2ff; font-size:.8rem; }
     nav a { margin-right: 1rem; }
@@ -131,7 +145,7 @@
 <body>
 <article>
   <header>
-    <h1>Project 0: Becoming Friends with Your Camera</h1>
+    <h1>CS180 Project 0: Becoming Friends with Your Camera</h1>
     <p class="author">
       Jingsong Sun <br /> Email: jingsongsun@berkeley.edu
       <!-- <span class="pill">LaTeX.css</span> <span class="pill">KaTeX</span> -->
