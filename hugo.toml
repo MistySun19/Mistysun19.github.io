@@ -22,8 +22,8 @@ enableEmoji = true
 [params]
   env = "production"
   title = "Misty Sun"
-  description = "Personal homepage of Misty Sun (Jingsong Sun): CS @ XJTU, visiting UC Berkeley. ML theory, LLMs, computer vision."
-  keywords = ["Misty Sun", "Jingsong Sun", "Berkeley", "XJTU", "Machine Learning", "LLM", "Computer Vision"]
+  description = "Personal homepage of Misty Sun (Jingsong Sun): CS @ XJTU, visiting UC Berkeley. LLM agents."
+  keywords = ["Misty Sun", "Jingsong Sun", "Berkeley", "XJTU", "LLM agents", "Large Language Models"]
   author = "Misty Sun"
   defaultTheme = "auto"           # auto / light / dark
   disableThemeToggle = false
@@ -57,7 +57,7 @@ enableEmoji = true
   [params.profileMode]
     enabled = true
     title = "Hi, I'm Misty Sun 👋"
-    subtitle = "孙靖淞 · CS @ Xi'an Jiaotong University · Visiting Student @ UC Berkeley.<br/>Interested in machine learning theory, large language models, and computer vision."
+    subtitle = "孙靖淞 · CS @ Xi'an Jiaotong University · Visiting Student @ UC Berkeley.<br/>Interested in <strong>LLM agents</strong>."
     imageUrl = "/avatar.jpg"
     imageWidth = 180
     imageHeight = 180
@@ -76,8 +76,8 @@ enableEmoji = true
       url = "/Jingsong-Sun-Resume.pdf"
 
     [[params.profileMode.buttons]]
-      name = "CS180 Project 0"
-      url = "/cs180/project0/"
+      name = "Projects"
+      url = "projects"
 
   # Social icons under the profile
   [[params.socialIcons]]
@@ -121,9 +121,9 @@ enableEmoji = true
     url = "/about/"
     weight = 20
   [[menu.main]]
-    identifier = "cs180"
-    name = "CS180"
-    url = "/cs180/project0/"
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
     weight = 30
   [[menu.main]]
     identifier = "tags"
