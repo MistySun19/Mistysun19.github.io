@@ -1,0 +1,17 @@
+/* Site-specific overrides applied on top of PaperMod.
+   Files in assets/css/extended/ are auto-included by the theme. */
+
+/* Profile avatar: don't crop to a circle.
+   Use a rounded square so the painting stays mostly intact.
+   object-fit: cover keeps the image filling the box without distortion;
+   slight border + shadow make it feel framed like a real painting. */
+.profile img {
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dark .profile img {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
