@@ -58,10 +58,10 @@ enableEmoji = true
     enabled = true
     title = "Hi, I'm Misty Sun 👋"
     subtitle = "孙靖淞 · CS @ Xi'an Jiaotong University · Visiting Student @ UC Berkeley.<br/>Interested in machine learning theory, large language models, and computer vision."
-    imageUrl = ""
+    imageUrl = "/avatar.jpg"
     imageWidth = 150
     imageHeight = 150
-    imageTitle = "Misty Sun"
+    imageTitle = "Misty Sun (painting by herself)"
 
     [[params.profileMode.buttons]]
       name = "Posts"
