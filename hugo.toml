@@ -22,8 +22,8 @@ enableEmoji = true
 [params]
   env = "production"
   title = "Misty Sun"
-  description = "Personal homepage of Misty Sun (Jingsong Sun): CS @ XJTU, visiting UC Berkeley. LLM agents."
-  keywords = ["Misty Sun", "Jingsong Sun", "Berkeley", "XJTU", "LLM agents", "Large Language Models"]
+  description = "Personal homepage of Misty Sun (Jingsong Sun): CS @ Xi'an Jiaotong University. LLM agents."
+  keywords = ["Misty Sun", "Jingsong Sun", "XJTU", "Xi'an Jiaotong University", "LLM agents", "Large Language Models"]
   author = "Misty Sun"
   defaultTheme = "auto"           # auto / light / dark
   disableThemeToggle = false
@@ -57,7 +57,7 @@ enableEmoji = true
   [params.profileMode]
     enabled = true
     title = "Hi, I'm Misty Sun 👋"
-    subtitle = "孙靖淞 · CS @ Xi'an Jiaotong University · Visiting Student @ UC Berkeley.<br/>Interested in <strong>LLM agents</strong>."
+    subtitle = "孙靖淞 · CS @ Xi'an Jiaotong University.<br/>Interested in <strong>LLM agents</strong>."
     imageUrl = "/avatar.jpg"
     imageWidth = 180
     imageHeight = 180
