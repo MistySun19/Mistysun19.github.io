@@ -12,24 +12,20 @@ disableShare: true
 ## Hi, I'm Misty Sun (孙靖淞)
 
 I'm a Computer Science student at **Xi'an Jiaotong University**, currently visiting **UC Berkeley**.
-I'm passionate about machine learning theory and large language models, and I enjoy
-exploring the theoretical foundations behind modern AI systems.
+My current research interest is **LLM agents** — how language models can plan, use tools,
+and act reliably in interactive environments.
 
 This site collects my coursework, projects, and notes.
 
 ## Research Interests
 
-- **Machine Learning Theory** — generalization, optimization, learning theory
-- **Large Language Models** — reasoning, length generalization, evaluation
-- **Computer Vision** — image processing and computational photography
-- **Applied Math** — optimization and statistical methods
+- **LLM agents** — planning, tool use, reasoning, and evaluation in interactive settings
 
-## Coursework
+## Projects
 
-- [CS180 — Intro to Computer Vision & Computational Photography](/cs180/project0/)
-  - Project 0 — Becoming Friends with Your Camera
-  - Project 1 — Images of the Russian Empire *(coming soon)*
-  - Project 2 — Fun with Filters and Frequencies *(coming soon)*
+See the [Projects](/projects/) page for write-ups. Highlights:
+
+- [CS180 — Intro to Computer Vision & Computational Photography](/projects/cs180/) (UC Berkeley)
 
 ## Contact
 
