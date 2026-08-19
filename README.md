@@ -1,46 +1,49 @@
-# mistysun19.github.io
+# Jingsong Sun — Personal Homepage
 
-Personal homepage of Misty Sun (Jingsong Sun), built with [Hugo](https://gohugo.io)
-and the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
+Source code for [Jingsong Sun's personal academic homepage](https://mistysun19.github.io/).
+
+The site presents my current research interests, experience at Kimi, selected
+publications, CV, and contact information in a clean, responsive single-page
+layout.
+
+## Highlights
+
+- Research experience and current work on post-training for LLM agents
+- Selected work from NeurIPS 2026 and the ICLR 2024 Workshop
+- Downloadable CV and contact information
+- Responsive layout for desktop, tablet, and mobile screens
+
+## Tech stack
+
+- [Hugo](https://gohugo.io/) for static-site generation
+- A custom homepage template in `layouts/index.html`
+- Custom styling in `static/custom.css`
+- [GitHub Pages](https://pages.github.com/) for hosting
+- GitHub Actions for automated builds and deployment
 
 ## Local development
 
+Clone the repository with its theme submodule, then start the Hugo development
+server:
+
 ```bash
-# clone with the PaperMod submodule
-git clone --recursive https://github.com/Mistysun19/Mistysun19.github.io.git
+git clone --recursive https://github.com/MistySun19/Mistysun19.github.io.git
 cd Mistysun19.github.io
-
-# (or, if already cloned)
-git submodule update --init --recursive
-
-# install Hugo extended (>= 0.128), e.g. on macOS:
-brew install hugo
-
-# run a local dev server with drafts
 hugo server -D
-# -> http://localhost:1313
 ```
 
-## Adding a post
+The local site is available at `http://localhost:1313/` by default.
 
-```bash
-hugo new posts/my-new-post.md
-# edit content/posts/my-new-post.md, set draft: false, then commit
-```
+## Project structure
+
+- `layouts/index.html` — custom homepage markup
+- `static/custom.css` — homepage styles
+- `static/Jingsong-Sun-Resume.pdf` — downloadable CV
+- `content/` — supporting Hugo content
+- `hugo.toml` — Hugo configuration and site metadata
+- `.github/workflows/hugo.yml` — GitHub Pages deployment workflow
 
 ## Deployment
 
-Pushes to `main` are built and deployed to GitHub Pages via the workflow in
-`.github/workflows/hugo.yml`.
-
-Repo setting required (one-time): **Settings → Pages → Build and deployment →
-Source: GitHub Actions**.
-
-## Structure
-
-- `hugo.toml` — site config (PaperMod profile mode, menu, social icons).
-- `content/` — Markdown content. `_index.md` is the home page; `posts/` holds blog posts.
-- `static/` — files served verbatim. Includes the existing `cs180/` project pages,
-  `images/`, and the CV PDF.
-- `themes/PaperMod/` — theme as a git submodule.
-- `.github/workflows/hugo.yml` — build & deploy to Pages.
+Changes merged into `main` are built with Hugo and deployed automatically to
+GitHub Pages.
