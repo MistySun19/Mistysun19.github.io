@@ -789,3 +789,332 @@ h5,
 h6 {
   margin-bottom: 0.8rem;
 }
+
+/* Personal homepage ------------------------------------------------------- */
+
+:root {
+  --page-bg: #fff;
+  --ink: oklch(22% 0.012 255);
+  --muted: oklch(49% 0.018 255);
+  --line: oklch(91% 0.008 255);
+  --link: oklch(45% 0.14 255);
+  --link-hover: oklch(34% 0.12 255);
+  --font-sans: "Instrument Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-serif: "Newsreader", "Songti SC", Georgia, serif;
+}
+
+html {
+  scroll-padding-top: 2rem;
+}
+
+body:has(.site-shell) {
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 max(1.25rem, env(safe-area-inset-right)) env(safe-area-inset-bottom)
+    max(1.25rem, env(safe-area-inset-left));
+  color: var(--ink);
+  background: var(--page-bg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  hyphens: none;
+  text-rendering: optimizeLegibility;
+}
+
+.site-shell {
+  width: min(100%, 960px);
+  margin: 0 auto;
+}
+
+.topbar {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+}
+
+.topbar nav a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.topbar nav a:hover {
+  color: var(--ink);
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(4.5rem, 10vw, 7rem);
+}
+
+.kicker,
+.section-heading > p,
+.publication-meta,
+.experience-meta,
+footer {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.identity h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(3.25rem, 10vw, 4rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-align: left;
+}
+
+.chinese-name {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-family: "Songti SC", "STSong", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+}
+
+.intro {
+  max-width: 41rem;
+}
+
+.intro p {
+  margin: 0;
+}
+
+.intro p + p {
+  margin-top: 1.25rem;
+}
+
+.intro .lead {
+  margin-bottom: 2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 5vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+}
+
+.profile-links a,
+.publication-body a,
+.contact-copy a {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.profile-links a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+.content-section {
+  padding: clamp(4rem, 9vw, 6rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.section-heading h2 {
+  margin: 0.75rem 0 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.publication-list,
+.experience-list {
+  border-top: 1px solid var(--line);
+}
+
+.publication,
+.experience-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.publication-meta,
+.experience-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  line-height: 1.5;
+}
+
+.publication-meta span:first-child,
+.experience-meta span:first-child {
+  color: var(--ink);
+}
+
+.publication-body h3,
+.experience-body h3 {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+.publication-body p,
+.experience-body p {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+}
+
+.publication-body a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact-section .section-heading {
+  margin-bottom: 0;
+}
+
+.contact-copy {
+  max-width: 40rem;
+}
+
+.contact-copy p {
+  margin: 0 0 1rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 4vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  align-items: center;
+}
+
+.contact-methods span {
+  color: var(--muted);
+}
+
+.site-shell footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 2rem 0 max(3rem, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+}
+
+.site-shell footer p {
+  margin: 0;
+}
+
+.site-shell a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) {
+  .profile-links a:hover,
+  .publication-body a:hover,
+  .contact-copy a:hover {
+    color: var(--link-hover);
+  }
+}
+
+@media (min-width: 52rem) {
+  .profile {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    column-gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  .profile .kicker {
+    grid-column: 1 / -1;
+  }
+
+  .profile-links {
+    grid-column: 2;
+  }
+
+  .publication,
+  .experience-item {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 4rem);
+    padding: 2.5rem 0;
+  }
+
+  .publication-meta,
+  .experience-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.35rem;
+  }
+
+  .contact-section {
+    grid-template-columns: 20rem minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+
+  .site-shell footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

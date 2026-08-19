@@ -1,6 +1,6 @@
 baseURL = "https://mistysun19.github.io/"
 languageCode = "en-us"
-title = "Misty Sun"
+title = "Jingsong Sun"
 theme = "PaperMod"
 
 enableRobotsTXT = true
@@ -21,10 +21,10 @@ enableEmoji = true
 
 [params]
   env = "production"
-  title = "Misty Sun"
-  description = "Personal homepage of Misty Sun (Jingsong Sun): CS @ Xi'an Jiaotong University. LLM agents."
-  keywords = ["Misty Sun", "Jingsong Sun", "XJTU", "Xi'an Jiaotong University", "LLM agents", "Large Language Models"]
-  author = "Misty Sun"
+  title = "Jingsong Sun"
+  description = "Personal homepage of Jingsong Sun: post-training and evaluation for language model agents."
+  keywords = ["Jingsong Sun", "LLM agents", "post-training", "language model evaluation"]
+  author = "Jingsong Sun"
   defaultTheme = "auto"           # auto / light / dark
   disableThemeToggle = false
   ShowReadingTime = true
@@ -49,7 +49,7 @@ enableEmoji = true
     favicon = "/favicon.ico"
 
   [params.label]
-    text = "Misty Sun"
+    text = "Jingsong Sun"
     icon = ""
     iconHeight = 35
 
