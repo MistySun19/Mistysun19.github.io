@@ -1,7 +1,7 @@
 ---
 title: "About"
 url: "/about/"
-summary: "About Misty Sun"
+summary: "About Jingsong Sun"
 ShowReadingTime: false
 ShowBreadCrumbs: false
 ShowPostNavLinks: false
@@ -9,29 +9,21 @@ hidemeta: true
 disableShare: true
 ---
 
-## Hi, I'm Misty Sun (孙靖淞)
+## Jingsong Sun (孙靖淞)
 
-I'm a Computer Science student at **Xi'an Jiaotong University**.
-My current research interest is **LLM agents** — how language models can plan, use tools,
-and act reliably in interactive environments.
+I work on post-training and evaluation for reliable, capable language model agents.
 
-This site collects my coursework, projects, and notes.
+I am currently a research intern on the RL Team at Kimi (Moonshot AI), contributing
+to Kimi K3 and post-training for LLM agents, with work on Agents Last Exam and
+continual learning.
 
 ## Research Interests
 
-- **LLM agents** — planning, tool use, reasoning, and evaluation in interactive settings
-
-## Projects
-
-See the [Projects](/projects/) page for write-ups. Highlights:
-
-- [CS180 — Intro to Computer Vision & Computational Photography](/projects/cs180/) (UC Berkeley)
+- **LLM agents** — post-training, continual learning, tool use, and evaluation
 
 ## Contact
 
-- Email (Berkeley): [jingsongsun@berkeley.edu](mailto:jingsongsun@berkeley.edu)
-- Email (XJTU): [jingsongsun@stu.xjtu.edu.cn](mailto:jingsongsun@stu.xjtu.edu.cn)
+- Email: [sjs2294603251@gmail.com](mailto:sjs2294603251@gmail.com)
+- WeChat: `sjs2294603251`
 - GitHub: [Mistysun19](https://github.com/Mistysun19)
 - CV: [Download (PDF)](/Jingsong-Sun-Resume.pdf)
-
-> Affiliation: Xi'an Jiaotong University
