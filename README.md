@@ -9,7 +9,7 @@ layout.
 ## Highlights
 
 - Research experience and current work on post-training for LLM agents
-- Selected work from NeurIPS 2026 and the ICLR 2024 Workshop
+- Selected work under review at ICLR 2027 and published at ICASSP 2025
 - Downloadable CV and contact information
 - Responsive layout for desktop, tablet, and mobile screens
 
