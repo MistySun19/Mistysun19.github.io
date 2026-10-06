@@ -1,0 +1,125 @@
+%------------------------
+% Resume based on Northeastern University CV Template
+%------------------------
+
+% Document class and font size
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{changepage}
+\usepackage{amsmath,amssymb}
+
+% Formatting
+\setlist{noitemsep}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{0.8\baselineskip}{0.5\baselineskip}
+\newenvironment{subs}
+  {\adjustwidth{2em}{0pt}}
+  {\endadjustwidth}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\pagestyle{empty}
+
+% Header
+\begin{center}
+    \textbf{\Large JINGSONG SUN}\\[3pt]
+    Phone: 18395803181 | \href{mailto:jingsongsun@stu.xjtu.edu.cn}{jingsongsun@stu.xjtu.edu.cn} | WeChat: sjs2294603251
+\end{center}
+
+%------------------------
+% Education Section
+\section*{EDUCATION}
+    \noindent
+    \textbf{Bachelor's Degree in Artificial Intelligence} \hfill Sep. 2023 -- Present \\
+    Xi'an Jiaotong University (XJTU), School of Artificial Intelligence, Xi'an, China \\
+    GPA: 3.96, Ranking: 2/72
+
+    \medskip
+    \noindent
+    \textbf{Young Gifted Program} \hfill Sep. 2022 -- Jul. 2023 \\
+    Xi'an Jiaotong University (XJTU), Xi'an, China \\
+    GPA: 3.81, Ranking: 15/187
+
+    \medskip
+    \noindent
+    \textbf{Visiting Student} \hfill Sep. 2025 -- Dec. 2025 \\
+    University of California, Berkeley, CA, USA \\
+    GPA: 3.9. Selected Coursework: Agentic AI (CS 194, A+), Natural Language Processing (CS 183, A).
+
+%------------------------
+% Research Experience Section
+\section*{RESEARCH EXPERIENCES}
+
+    \noindent
+    \textbf{Research Intern, Post-training Team} \hfill May 2026 -- Present \\
+    \textit{\href{https://www.kimi.com/}{Kimi} (Moonshot AI).}
+    \begin{itemize}
+        \item Work on model behavior analysis, RL pipeline design, and data construction to improve base models' knowledge accumulation and self-improvement capabilities.
+    \end{itemize}
+
+    \noindent
+    \textbf{Tool Use Agent Research} \hfill Sep. 2025 -- Mar. 2026 \\
+    \textit{First Author. Under review at ICLR 2027.}\\
+    \textit{Advisor: Prof.\ Joseph Gonzalez, Department of EECS, University of California, Berkeley.}
+    \begin{itemize}
+        \item Researched tool use capabilities of LLM-based agents, with a focus on audio agent benchmarking and evaluation.
+        \item Designed and developed a tool use benchmark for audio agents, evaluating LLMs' ability to invoke and orchestrate audio-processing tools in multi-step reasoning tasks.
+        \item First-authored \textbf{Real-Time Audio Tool Bench}, a manuscript on real-time tool calling in multi-turn voice interaction, currently under review.
+    \end{itemize}
+
+    \noindent
+    \textbf{Training Dynamics of Loop Transformers on Random Graphs} \hfill Apr. 2025 -- Feb. 2026 \\
+    \textit{Advisors: Prof.\ Kaifeng Lyu, Institute for Interdisciplinary Information Sciences, Tsinghua University} \\
+    \textit{\& Prof.\ Jason D.\ Lee, Electrical and Computer Engineering and Computer Science, Princeton University.}
+    \begin{itemize}
+        \item Studied the training dynamics of loop Transformers on graph connectivity tasks.
+        \item Demonstrated theoretically that a single-layer loop Transformer can learn graph reachability tasks through gradient descent, with provable convergence guarantees.
+    \end{itemize}
+    
+    \noindent
+    \textbf{Exploring the Robustness of In-Context Learning with Noisy Labels} \hfill Jan. 2024 -- May 2024 \\
+    \textit{Published at ICASSP 2025.}
+    \begin{itemize}
+        \item Explored the robustness of Transformer models' In-Context Learning (ICL) capabilities when faced with noisy labels.
+        \item Demonstrated that Transformers exhibit significant resilience against various types of noise in demonstration labels, and that introducing noise into the training set as data augmentation can further enhance this robustness.
+        \item Proposed the idea of studying the impact of input dimensions on Transformer performance in ICL; independently conducted the experiments and wrote the corresponding section of the paper.
+    \end{itemize}
+
+%------------------------
+% Publications Section
+\section*{PUBLICATIONS}
+    \noindent
+    Kimi Team (including \textbf{Jingsong Sun}). Kimi K3: Open Frontier Intelligence. \\
+    \textit{Technical Report}, 2026. \href{https://arxiv.org/abs/2607.24653}{arXiv}.
+
+    \medskip
+    \noindent
+    Programmatic Tool Calling Evolver (PTC Evolver). \\
+    \textbf{First Author}. \textit{Under review at ICLR 2027}.
+
+    \medskip
+    \noindent
+    Real-Time Audio Tool Bench: Evaluating Real-Time Tool Calling in Multi-Turn Voice Interaction. \\
+    \textbf{First Author}. \textit{Under review at ICLR 2027}.
+
+    \medskip
+    \noindent
+    Chen Cheng, Xinzhi Yu, Haodong Wen, \textbf{Jingsong Sun}, Guanzhang Yue, Yihao Zhang, Zeming Wei. \\
+    Exploring the Robustness of In-Context Learning with Noisy Labels. \textit{ICASSP 2025}.
+
+%------------------------
+% Honors & Awards Section
+\section*{HONORS \& AWARDS}
+    \noindent
+    \textbf{National Scholarship Candidate \& HIWIN Elite Student Scholarship} \hfill Nov. 2024 \\
+    \textbf{Young Gifted Program Scholarship}, Rank: 15/187 \hfill 2022 -- 2023
+
+\end{document}
