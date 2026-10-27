@@ -1,6 +1,6 @@
 ---
 title: "About"
-lastmod: 2026-10-28
+lastmod: 2026-10-27
 url: "/about/"
 summary: "About Jingsong Sun"
 ShowReadingTime: false
