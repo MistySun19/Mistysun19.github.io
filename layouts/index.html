@@ -18,7 +18,8 @@
   {{ $person := dict "@type" "Person" "@id" (printf "%s#person" .Permalink) "name" "Jingsong Sun" "alternateName" "孙靖淞" "url" .Permalink "image" ("avatar.jpg" | absURL) "description" "AI undergraduate at Xi'an Jiaotong University and research intern on the RL Team at Kimi (Moonshot AI)." "sameAs" (slice site.Params.scholarURL site.Params.openreviewURL "https://github.com/MistySun19") "knowsAbout" (slice "LLM agents" "Post-training" "Agent evaluation" "Tool use" "Continual learning") }}
   {{ $profile := dict "@context" "https://schema.org" "@type" "ProfilePage" "url" .Permalink "mainEntity" $person }}
   <script type="application/ld+json">{{ $profile | jsonify | safeJS }}</script>
-  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/jpeg" href="{{ site.Params.assets.favicon | absURL }}" />
+  <link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | absURL }}" />
   <link rel="preload" href="/fonts/cmunorm.woff" as="font" type="font/woff" crossorigin />
   <link rel="stylesheet" href="/custom.css?v=20261006-1" />
 </head>
