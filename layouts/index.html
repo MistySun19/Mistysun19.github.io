@@ -6,9 +6,18 @@
   <meta name="author" content="Jingsong Sun" />
   <meta
     name="description"
-    content="Jingsong Sun works on post-training and evaluation for reliable, capable language model agents."
+    content="Jingsong Sun (孙靖淞), an AI undergraduate at Xi'an Jiaotong University and research intern at Kimi (Moonshot AI), works on post-training and evaluation for LLM agents."
   />
-  <title>Jingsong Sun</title>
+  <title>Jingsong Sun (孙靖淞) | LLM Agents · Xi'an Jiaotong University</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Jingsong Sun (孙靖淞)" />
+  <meta property="og:description" content="AI undergraduate at Xi'an Jiaotong University and research intern at Kimi (Moonshot AI). Post-training and evaluation for LLM agents." />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:image" content="{{ "avatar.jpg" | absURL }}" />
+  {{ $person := dict "@type" "Person" "@id" (printf "%s#person" .Permalink) "name" "Jingsong Sun" "alternateName" "孙靖淞" "url" .Permalink "image" ("avatar.jpg" | absURL) "description" "AI undergraduate at Xi'an Jiaotong University and research intern on the RL Team at Kimi (Moonshot AI)." "sameAs" (slice site.Params.scholarURL site.Params.openreviewURL "https://github.com/MistySun19") "knowsAbout" (slice "LLM agents" "Post-training" "Agent evaluation" "Tool use" "Continual learning") }}
+  {{ $profile := dict "@context" "https://schema.org" "@type" "ProfilePage" "url" .Permalink "mainEntity" $person }}
+  <script type="application/ld+json">{{ $profile | jsonify | safeJS }}</script>
   <link rel="icon" href="data:," />
   <link rel="preload" href="/fonts/cmunorm.woff" as="font" type="font/woff" crossorigin />
   <link rel="stylesheet" href="/custom.css?v=20261006-1" />
@@ -41,6 +50,8 @@
       <div class="contact">
         <b>Email:</b> <a href="mailto:sjs2294603251@gmail.com">sjs2294603251@gmail.com</a><br />
         <b>Links:</b>
+        <a href="{{ site.Params.scholarURL }}" target="_blank" rel="me noreferrer">Google Scholar</a> /
+        <a href="{{ site.Params.openreviewURL }}" target="_blank" rel="me noreferrer">OpenReview</a> /
         <a href="https://github.com/MistySun19" target="_blank" rel="noreferrer">GitHub</a> /
         <a href="/Jingsong-Sun-Resume.pdf" target="_blank" rel="noreferrer">CV</a>
       </div>
