@@ -26,7 +26,6 @@ enableEmoji = true
   keywords = ["Jingsong Sun", "LLM agents", "post-training", "language model evaluation"]
   author = "Jingsong Sun"
   scholarURL = "https://scholar.google.com/citations?user=l4WU60sAAAAJ"
-  openreviewURL = "https://openreview.net/profile?id=~Jingsong_Sun1"
   defaultTheme = "auto"           # auto / light / dark
   disableThemeToggle = false
   ShowReadingTime = true
@@ -87,11 +86,6 @@ enableEmoji = true
     name = "googlescholar"
     title = "Google Scholar"
     url = "https://scholar.google.com/citations?user=l4WU60sAAAAJ"
-
-  [[params.socialIcons]]
-    name = "link"
-    title = "OpenReview"
-    url = "https://openreview.net/profile?id=~Jingsong_Sun1"
 
   [[params.socialIcons]]
     name = "email"

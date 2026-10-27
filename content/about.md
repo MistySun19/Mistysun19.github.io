@@ -1,6 +1,6 @@
 ---
 title: "About"
-lastmod: 2026-10-27
+lastmod: 2026-10-28
 url: "/about/"
 summary: "About Jingsong Sun"
 ShowReadingTime: false
@@ -32,5 +32,4 @@ continual learning.
 - WeChat: `sjs2294603251`
 - GitHub: [Mistysun19](https://github.com/Mistysun19)
 - Google Scholar: [Jingsong Sun](https://scholar.google.com/citations?user=l4WU60sAAAAJ)
-- OpenReview: [Jingsong Sun](https://openreview.net/profile?id=~Jingsong_Sun1)
 - CV: [Download (PDF)](/Jingsong-Sun-Resume.pdf)

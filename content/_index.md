@@ -1,4 +1,4 @@
 ---
 title: "Home"
-lastmod: 2026-10-27
+lastmod: 2026-10-28
 ---
