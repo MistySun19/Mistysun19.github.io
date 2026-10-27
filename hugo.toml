@@ -48,7 +48,8 @@ enableEmoji = true
   [params.assets]
     disableHLJS = false
     disableFingerprinting = false
-    favicon = "/favicon.ico"
+    favicon = "/avatar.jpg"
+    apple_touch_icon = "/avatar.jpg"
 
   [params.label]
     text = "Jingsong Sun"
