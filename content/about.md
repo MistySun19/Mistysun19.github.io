@@ -18,7 +18,7 @@ I am an undergraduate in Artificial Intelligence at Xi'an Jiaotong University
 (2023–2027). In Fall 2025, I was a visiting student at UC Berkeley, working with
 Prof. Joseph Gonzalez.
 
-I am currently a research intern on the RL Team at Kimi (Moonshot AI), contributing
+I was previously a research intern on the RL Team at Kimi (Moonshot AI), contributing
 to Kimi K3 and post-training for LLM agents, with work on Agents Last Exam and
 continual learning.
 
